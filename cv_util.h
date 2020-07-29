@@ -17,4 +17,9 @@ namespace smsc_cvutil{
 	void show_photo(const CVMat& cv_mat);
 	void show_photo(const cv::Mat& mat);
 	void apply_filter2D_to_dir(const std::string& dir);
+	//最近邻域插值
+	void nearest_intertoplation_veb3b(cv::Mat& src, cv::Mat& dst, const int rows, const int cols);
+	//双线性插值
+	void bilinear_intertpolatioin_grey(cv::Mat& src, cv::Mat& dst, const int rows, const int cols);
+	void bilinear_intertpolatioin_vec3b(cv::Mat& src, cv::Mat& dst, const int rows, const int cols);
 }
