@@ -19,6 +19,12 @@
     <Filter Include="源文件\util">
       <UniqueIdentifier>{d0627070-578e-48eb-933f-9b07f211e984}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\opencv">
+      <UniqueIdentifier>{0067c553-6a50-4b26-a878-a7ce1b953699}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\opencv">
+      <UniqueIdentifier>{6ece631c-4e61-447d-a9eb-b85dce0ff256}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="sanctuary-msc.cpp">
@@ -30,12 +36,30 @@
     <ClCompile Include="cv_util.cpp">
       <Filter>源文件\util</Filter>
     </ClCompile>
+    <ClCompile Include="pixel_proc.cpp">
+      <Filter>源文件\opencv</Filter>
+    </ClCompile>
+    <ClCompile Include="str_util.cpp">
+      <Filter>源文件\util</Filter>
+    </ClCompile>
+    <ClCompile Include="time_util.cpp">
+      <Filter>源文件\util</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cv_util.h">
       <Filter>头文件\util</Filter>
     </ClInclude>
     <ClInclude Include="io_util.h">
+      <Filter>头文件\util</Filter>
+    </ClInclude>
+    <ClInclude Include="pixel_proc.h">
+      <Filter>头文件\opencv</Filter>
+    </ClInclude>
+    <ClInclude Include="str_util.h">
+      <Filter>头文件\util</Filter>
+    </ClInclude>
+    <ClInclude Include="time_util.h">
       <Filter>头文件\util</Filter>
     </ClInclude>
   </ItemGroup>

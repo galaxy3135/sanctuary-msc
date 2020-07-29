@@ -41,7 +41,7 @@ vector<string> smsc_ioutil::list_files(const string& directory, const bool& is_r
 			if (boost::filesystem::is_regular_file(x)) 
 			{
 				vec.push_back(x.path().string());
-				cout << x.path().string() << endl;
+				//cout << x.path().string() << endl;
 			}
 			else if (is_recursive && boost::filesystem::is_directory(x))
 			{
@@ -51,5 +51,5 @@ vector<string> smsc_ioutil::list_files(const string& directory, const bool& is_r
 			
 		}
 	}
-	return vector<string>();
+	return vec;
 }

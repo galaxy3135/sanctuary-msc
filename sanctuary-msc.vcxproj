@@ -159,11 +159,17 @@
   <ItemGroup>
     <ClCompile Include="cv_util.cpp" />
     <ClCompile Include="io_util.cpp" />
+    <ClCompile Include="pixel_proc.cpp" />
     <ClCompile Include="sanctuary-msc.cpp" />
+    <ClCompile Include="str_util.cpp" />
+    <ClCompile Include="time_util.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cv_util.h" />
     <ClInclude Include="io_util.h" />
+    <ClInclude Include="pixel_proc.h" />
+    <ClInclude Include="str_util.h" />
+    <ClInclude Include="time_util.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -14,4 +14,7 @@ namespace smsc_cvutil{
 	CVMat read_photo(const std::string& path);
 	CVMat read_photo(const std::string& path, const cv::ImreadModes mode);
 	void open_photo_with_highgui(const std::string& path);
+	void show_photo(const CVMat& cv_mat);
+	void show_photo(const cv::Mat& mat);
+	void apply_filter2D_to_dir(const std::string& dir);
 }
