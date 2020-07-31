@@ -28,7 +28,10 @@ CVMat smsc_cvutil::read_photo(const std::string& path, const cv::ImreadModes mod
 	if (is_file_ok(path)) {
 		try {
 			mat.mat = cv::imread(path, mode);
-			mat.is_ok = true;
+			if (mat.mat.empty() == false) {
+				mat.is_ok = true;
+			}
+		
 		}
 		catch (std::exception& e) {
 			std::cout << e.what() << std::endl;
@@ -63,6 +66,7 @@ void smsc_cvutil::show_photo(const cv::Mat& mat)
 	cv::imshow("Preview", mat);
 	cv::waitKey(0);
 }
+
 
 static void filter2D_process_1(const string& file);
 void smsc_cvutil::apply_filter2D_to_dir(const string& dir)
@@ -223,6 +227,30 @@ void smsc_cvutil::bilinear_intertpolatioin_vec3b(cv::Mat& src, cv::Mat& dst, con
 			dst.at<Vec3b>(i, j)[1] = val_g(0, 0);
 			dst.at<Vec3b>(i, j)[2] = val_r(0, 0);
 		}
+}
+
+void smsc_cvutil::adjust_saturation(cv::Mat& src, cv::Mat& dst, double alpha, double beta)
+{
+	for (int y = 0; y < src.rows; y++) {
+		for (int x = 0; x < src.cols; x++) {
+			for (int c = 0; c < src.channels(); c++) {
+				dst.at<Vec3b>(y, x)[c] =
+					saturate_cast<uchar>(alpha * src.at<Vec3b>(y, x)[c] + beta);
+			}
+		}
+	}
+}
+
+void smsc_cvutil::adjust_saturation(const string& input_img, const string& output_img, double alpha, double beta)
+{
+	CVMat mat = read_photo(input_img);
+	if (!mat.is_ok) {
+		return;
+	}
+	Mat in = mat.mat;
+	Mat out = Mat::zeros(in.size(), in.type());
+	adjust_saturation(in, out, alpha, beta);
+	imwrite(output_img, out);
 }
 
 

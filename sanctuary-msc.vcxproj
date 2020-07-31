@@ -158,6 +158,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="cv_util.cpp" />
+    <ClCompile Include="c_util.cpp" />
     <ClCompile Include="io_util.cpp" />
     <ClCompile Include="pixel_proc.cpp" />
     <ClCompile Include="sanctuary-msc.cpp" />
@@ -166,6 +167,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cv_util.h" />
+    <ClInclude Include="c_util.h" />
     <ClInclude Include="io_util.h" />
     <ClInclude Include="pixel_proc.h" />
     <ClInclude Include="str_util.h" />

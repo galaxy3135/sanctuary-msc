@@ -9,14 +9,45 @@
 #include "str_util.h"
 #include "time_util.h"
 #include "io_util.h"
-#include<cassert>
+#include "c_util.h";
+#include <cassert>
+#include <malloc.h>
+#include <opencv2/core.hpp>
+#include <opencv2/imgcodecs.hpp>
+#include <opencv2/ml.hpp>
 using namespace std;
 using namespace cv;
 using namespace smsc_cvutil;
 using namespace smsc_ioutil;
 
-int main()
-{
+template<typename T>
+static string force_cast_int(T val) {
+	return string(val);
+}
+
+//int main()
+//{
+	//cout << char_length_of("12345") << endl;
+	//char* txt_content = (char*)malloc(1000*sizeof(char));
+	//char *txt_content = read_text_file("E:\\test.txt");
+	//cout << txt_content << endl;
+	//for (int i = 0; i < 100; i++) {
+	//	*txt_content++ = '1';
+	//}
+	//cout << txt_content << endl;
+	//cout << txt_content << endl;
+	//free(txt_content);
+	//free(txt_content);
+	//cout << txt_content << endl;
+	//free(txt_content);
+	/*string path = "E:\\1\\2\\ssd.phg";
+	string path2 = smsc_str_util::substr_before_nth_char(path, '\\', 2);
+	cout << path2 << endl;
+	string s = "test";
+	const char* chars = s.c_str();
+	while (*chars != '\0') {
+		cout << *(chars++) << endl;
+	}*/
 	//cv::Mat img = cv::imread("E:\\smile.jpg", cv::IMREAD_COLOR);
 	//if (img.empty()) return -1;
 	//cv::Mat dst;
@@ -25,39 +56,22 @@ int main()
 	////cv::imshow("dst", dst);
 	//cv::imwrite("E:\\smile.jpg", dst);
 	//cv::waitKey(0);
-	return 0;
-}
+	//return 0;
+//}
 
 
 //int main(int argc, char** argv)
 //{
 //	string path = "E:\\TestResources\\testPic1.png";
-//	string dir = "E:\\风景照片";
-//	vector<string> files = list_files(dir,false);
-//	string f1 = files[0];
-//	string f2 = files.at(1);
-//	double alpha = 0.5;
-//	double beita;
-//	double input;
-//	Mat src1, src2, dst;
-//	cout << " Simple Linear Blender " << endl;
-//	cout << "-----------------------" << endl;
-//	cout << "* Enter alpha [0.0-1.0]: ";
-//	cin >> input;
-//	// We use the alpha provided by the user if it is between 0 and 1
-//	if (input >= 0 && input <= 1)
-//	{
-//		alpha = input;
-//	}
-//	src1 = imread(f2);
-//	src2 = imread(f1);
-//	if (src1.empty()) { cout << "Error loading src1" << endl; return EXIT_FAILURE; }
-//	if (src2.empty()) { cout << "Error loading src2" << endl; return EXIT_FAILURE; }
-//	beita = (1.0 - alpha);
-//	addWeighted(src1, alpha, src2, beita, 0.0, dst);
-//	imshow("Linear Blend", dst);
-//	cv::waitKey(0); // Wait for a keystroke in the window
+//	string out = "E:\\TestResources\\testPic2_.png";
+//	smsc_cvutil::adjust_saturation(path, out, 0.5, 1);
 //	return 0;
 //}
+using namespace cv::ml;
+int main(int argc, char** argv) {
+	
+	waitKey();
+	return 0;
+}
 
 

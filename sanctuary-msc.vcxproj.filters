@@ -45,6 +45,9 @@
     <ClCompile Include="time_util.cpp">
       <Filter>源文件\util</Filter>
     </ClCompile>
+    <ClCompile Include="c_util.cpp">
+      <Filter>源文件\util</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cv_util.h">
@@ -60,6 +63,9 @@
       <Filter>头文件\util</Filter>
     </ClInclude>
     <ClInclude Include="time_util.h">
+      <Filter>头文件\util</Filter>
+    </ClInclude>
+    <ClInclude Include="c_util.h">
       <Filter>头文件\util</Filter>
     </ClInclude>
   </ItemGroup>
